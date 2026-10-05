@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kiwi Research Assistant 的隱私權政策：Google Drive 與 Sheets 資料的存取、使用、儲存、外部 AI 處理與授權撤銷說明。">
+  <meta name="referrer" content="no-referrer">
+  <title>隱私權政策｜Kiwi Research Assistant</title>
+  <!-- 政策草稿：發布前必須確認此政策符合實際運作並同意其中的承諾。
+       1. 替換所有 YOUR_SUPPORT_EMAIL，並同步更新 index.html。
+       2. 確認實際 Google scopes、AI 服務、儲存、保留與刪除做法。
+       3. 實際採用的服務、用途或設定若不同，請修改相關段落。
+       4. 更新日期應改成實際政策生效／修訂日期。
+       5. 本範本不是 Google 驗證保證或法律意見。 -->
+  <style>
+    :root { color-scheme: light; --paper: #faf9f5; --ink: #232c28; --muted: #56635c; --line: #d5dcd3; --accent: #24543b; --tint: #edf2e9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif; font-size: 17px; line-height: 1.85; }
+    a { color: var(--accent); text-underline-offset: .2em; overflow-wrap: anywhere; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(100% - 40px, 920px); margin-inline: auto; }
+    .skip { position: absolute; top: -100px; left: 20px; background: white; padding: 12px; z-index: 10; }
+    .skip:focus { top: 12px; }
+    header { border-bottom: 1px solid var(--line); }
+    .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-block: 18px; }
+    .brand { font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 15px; }
+    nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+    main { padding-block: 48px 64px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .12em; }
+    h1 { font-family: "Noto Serif TC", "PMingLiU", "Songti TC", serif; font-size: clamp(30px, 5vw, 44px); line-height: 1.35; font-weight: 700; margin: 0 0 14px; }
+    .meta { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+    section { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
+    h2 { font-size: 22px; line-height: 1.5; margin: 0 0 14px; }
+    p { margin: 0 0 14px; }
+    ul, ol { padding-left: 1.4em; margin: 0 0 14px; }
+    li + li { margin-top: 10px; }
+    code { font-family: Consolas, "Courier New", monospace; font-size: .85em; overflow-wrap: anywhere; }
+    .note { background: var(--tint); padding: 18px 22px; border-radius: 4px; }
+    .note p:last-child { margin-bottom: 0; }
+    footer { border-top: 1px solid var(--line); padding-block: 24px; color: var(--muted); font-size: 14px; }
+    footer p:last-child { margin-bottom: 0; }
+    @media (max-width: 560px) { .wrap { width: min(100% - 32px, 920px); } main { padding-block: 36px 44px; } .header-row { align-items: flex-start; } h2 { font-size: 20px; } }
+    @media print { body { background: white; font-size: 12pt; } nav, .skip { display: none; } main { padding-top: 24px; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header>
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">Kiwi Research Assistant</a>
+      <nav aria-label="主要導覽">
+        <a href="index.html">應用程式介紹</a>
+        <a href="privacy.html" aria-current="page">隱私權政策</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <p class="eyebrow">PRIVACY POLICY</p>
+    <h1>隱私權政策</h1>
+    <p class="meta">應用程式：Kiwi Research Assistant<br>最後更新：<time datetime="2026-10-05">2026 年 10 月 5 日</time></p>
+    <p>本政策說明由 Kiwi 維護的 Kiwi Research Assistant（以下稱「本工具」）如何存取、使用、儲存及傳送資料。本工具是以 Hermes Agent 執行的個人研究與工作流程設定；本網站是提供介紹及政策資訊的靜態網站。</p>
+
+    <section aria-labelledby="scope">
+      <h2 id="scope">1. Google 資料的存取</h2>
+      <p>本工具使用 Google OAuth，依你授予的權限與提出的任務存取 Google Drive 和 Google Sheets。你不需要向本工具提供 Google 帳戶密碼。</p>
+      <ul>
+        <li><strong>Google Drive：</strong>可能存取檔案名稱、識別碼、類型、資料夾結構與其他中繼資料，以及任務所需的檔案內容；並可依任務需要上傳、整理、更新或刪除檔案。目前的權限範圍為 <code>https://www.googleapis.com/auth/drive</code>，可涵蓋你帳號內的 Drive 檔案，不限於本工具建立的檔案。</li>
+        <li><strong>Google Sheets：</strong>可能存取試算表名稱、結構與儲存格內容，並依任務需要建立或更新試算表。目前的權限範圍為 <code>https://www.googleapis.com/auth/spreadsheets</code>。</li>
+      </ul>
+      <p>目前不要求 Gmail、Calendar、Contacts 或 Google Docs API 的專用 OAuth 權限。若未來用途需要改變存取範圍，應先更新政策並重新取得必要授權。</p>
+    </section>
+
+    <section aria-labelledby="use">
+      <h2 id="use">2. 資料的用途</h2>
+      <p>Google 資料用於提供你要求的研究與工作功能，包括搜尋文件、摘要或整理內容、管理檔案，以及讀取和更新試算表。必要的對話與執行紀錄也可能用於維持任務脈絡及排除錯誤。</p>
+      <p>本工具不將取得的 Google 資料出售、用於廣告投放，或提供給資料經紀商；也不以 Google 資料建立與使用者要求無關的個人剖析資料。</p>
+    </section>
+
+    <section aria-labelledby="ai">
+      <h2 id="ai">3. 外部 AI 與第三方服務</h2>
+      <div class="note">
+        <p><strong>資料不一定只在你的電腦上處理。</strong>Hermes 使用外部模型執行任務時，相關指令、對話、檔案片段、試算表內容或工具回傳結果，可能送至當時設定的模型供應商，例如 OpenAI。</p>
+      </div>
+      <p style="margin-top: 18px;">僅應傳送完成你要求之功能所需的資料。不同模型供應商及帳戶方案的保存、日誌和資料使用條款可能不同；本政策不保證所有第三方服務均零保存。在傳送 Google 資料前，應確認所選服務與帳戶設定不會將該資料用於通用 AI／機器學習模型訓練，且適合資料的敏感程度；未確認或不符合時，不應傳送。</p>
+      <p>若任務需要其他外部服務，應在傳送資料前確認其必要性及授權範圍。請勿輸入未經授權揭露的個人、病人、機密或研究資料。</p>
+      <p>Google API 服務本身依 Google 的相關條款與政策運作；外部模型服務收到的資料另受該供應商條款與政策規範。</p>
+    </section>
+
+    <section aria-labelledby="storage">
+      <h2 id="storage">4. 儲存與安全</h2>
+      <p>原始 Drive 檔案與 Sheets 試算表由 Google 服務保存。Hermes 執行任務時，可能在其執行環境中保存下載檔案、輸出檔案、對話、任務紀錄、日誌及備份；若使用外部模型，該服務也可能依其條款保存收到的內容。</p>
+      <p>Google OAuth access token 與 refresh token 保存在 Hermes 執行環境中的憑證檔案，不應置於公開網站或公開 repository。維護者應限制憑證及資料的檔案存取權限，保護執行環境，並只保留完成工作所需的資料。</p>
+      <p>本工具不承諾所有本機檔案均以加密方式儲存，也不承諾系統可完全避免安全事件。</p>
+    </section>
+
+    <section aria-labelledby="retention">
+      <h2 id="retention">5. 保留與刪除</h2>
+      <p>本工具未設定涵蓋所有檔案、對話、日誌及備份的統一自動刪除期限。實際保留時間取決於各項資料所在服務、Hermes 設定及使用者的保存需求。使用者與維護者應定期清理不再需要的資料；第三方服務的保留與刪除則依其條款及可用控制項處理。</p>
+      <ul>
+        <li>Google Drive／Sheets 中的資料，可透過 Google 服務的功能管理及刪除。</li>
+        <li>Hermes 的本機檔案、對話及紀錄，需要另行清理；備份中的副本也需要另外處理。</li>
+        <li>撤銷 OAuth 授權不會自動刪除先前保存或已送至第三方的資料。</li>
+      </ul>
+      <p>如需協助釐清保存位置或刪除方式，可聯絡維護者。</p>
+    </section>
+
+    <section aria-labelledby="choices">
+      <h2 id="choices">6. 你的選擇與授權撤銷</h2>
+      <p>你可拒絕授權、停止使用本工具，或前往<a href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer">Google 帳戶的第三方連線管理頁面</a>移除本工具的存取權。授權移除後，原有授權將無法繼續用於存取 Google API；再次使用需要重新授權。</p>
+      <p>你也可透過下方聯絡方式詢問 Google 資料的使用方式。請不要在聯絡郵件中附上 token、密碼或敏感資料。</p>
+    </section>
+
+    <section aria-labelledby="website">
+      <h2 id="website">7. 本網站與 GitHub Pages</h2>
+      <p>本網站不提供登入或資料上傳表單，未嵌入廣告、分析追蹤程式或第三方字型，也未由頁面程式設定 cookie。但 GitHub Pages 作為託管服務，可能為安全目的記錄訪客 IP 等技術資訊，依<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub 隱私權聲明</a>處理。</p>
+    </section>
+
+    <section aria-labelledby="limited-use">
+      <h2 id="limited-use">8. Google API 資料使用政策</h2>
+      <p>本工具對從 Google API 取得之資訊的使用，以及將該資訊傳送至其他應用程式的做法，將遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>，包括其中的 Limited Use 要求。Google 資料僅應用於提供使用者要求的功能，不得用於開發、改善或訓練通用 AI／機器學習模型。</p>
+    </section>
+
+    <section aria-labelledby="changes">
+      <h2 id="changes">9. 政策更新與聯絡</h2>
+      <p>若資料用途、存取範圍、使用服務或保存方式改變，維護者應同步更新本政策及頁首日期；必要時應在新用途開始前通知使用者並取得新的授權。</p>
+      <p>維護者：Kiwi<br>應用程式：Kiwi Research Assistant<br>支援電子郵件：<a href="mailto:YOUR_SUPPORT_EMAIL">pharm.shared@gmail.com</a></p>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p><a href="index.html">返回應用程式首頁</a> · Kiwi Research Assistant</p>
+      <p>這是個人維護的應用程式設定，不是 Google 官方產品。</p>
+    </div>
+  </footer>
+</body>
+</html>
